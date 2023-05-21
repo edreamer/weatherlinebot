@@ -13,7 +13,7 @@ from linebot.models import (
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('8y8UFvvBgPWyCdLQUJJ53eeYQB9z5PMOSJXt5vSvedXBmO6mPRd3aFFMi/YL/tUGolkth7W80ZMkNXOGrryB4T0aryW9QAQzb3z4O/MFbWzopRocAXyY7X4tva+o1MXbloySdO3lq5ny2rGzBUM5EQdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('476f5fd7e7855093a98ff4985ea587fb')
+handler1 = WebhookHandler('476f5fd7e7855093a98ff4985ea587fb')
 
 def getWeather(city):
     url = 'https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-A781924B-758D-474E-AC05-D5681DB85505&downloadType=WEB&format=JSON'
@@ -51,7 +51,7 @@ def callback():
 
     # handle webhook body
     try:
-        handler.handle(body, signature)
+        handler1.handle(body, signature)
     except InvalidSignatureError:
         print("Invalid signature. Please check your channel access token/channel secret.")
         abort(400)
@@ -59,7 +59,7 @@ def callback():
     return 'OK'
 
 
-@handler.add(MessageEvent, message=TextMessage)
+@handler1.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = getWeather(event.message.text)
     line_bot_api.reply_message(
