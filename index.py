@@ -12,8 +12,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('8y8UFvvBgPWyCdLQUJJ53eeYQB9z5PMOSJXt5vSvedXBmO6mPRd3aFFMi/YL/tUGolkth7W80ZMkNXOGrryB4T0aryW9QAQzb3z4O/MFbWzopRocAXyY7X4tva+o1MXbloySdO3lq5ny2rGzBUM5EQdB04t89/1O/w1cDnyilFU=')
-handler1 = WebhookHandler('476f5fd7e7855093a98ff4985ea587fb')
+line_bot_api = LineBotApi('DLaIyj+kwDHv7zSAupLbjYDOEBdAGz6NAGLM1QKaKAyO5lpZxBH5TrH/lvCU+/NVh4ERKUi/it2e3tflmQA92Dt9Pwg0rUjlTPi7VOkDYwvy/ua1O3yOLKsddp5C1epMxF09O/RFiA5RfRH537E3bgdB04t89/1O/w1cDnyilFU=')
+handler1 = WebhookHandler('db2b373c6088191909b2a966d07cdcd2')
 
 def getWeather(city):
     url = 'https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-A781924B-758D-474E-AC05-D5681DB85505&downloadType=WEB&format=JSON'
